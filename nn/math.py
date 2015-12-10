@@ -9,6 +9,11 @@ def softmax(x):
     xt = exp(x - max(x))
     return xt / sum(xt)
 
+def tanh(x):
+    x = maximum(-50, x)
+    x = minimum(50, x)
+    return 2.0/(1.0 + exp(-2.0*x)) - 1.0
+
 def make_onehot(i, n):
     y = zeros(n)
     y[i] = 1

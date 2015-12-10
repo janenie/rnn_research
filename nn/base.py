@@ -402,9 +402,14 @@ class NNBase(object):
     def compute_loss(self, X, y):
         """Compute loss over data X,y"""
         raise NotImplementedError("compute_loss not yet implemented")
+    def compute_ppl(self, X,Y):
+        raise NotImplementedError("compute_ppl not yet implemented")
 
     def compute_mean_loss(self, X, y):
         return self.compute_loss(X, y) / len(y)
+    
+    def compute_mean_ppl(self, X, Y):
+        return self.compute_ppl(X, Y) / len(Y)
 
     def compute_display_loss(self, X, y):
         """
